@@ -37,6 +37,14 @@
                   </div>
               </div>
               {% endif %}
+              {% if device_data.resources.load %}
+              <div class="form-row">
+                  <label>{% trans 'Sim1' %}:</label>
+                  <div class="readonly">
+                      {{ device_data.resources.load|join:", &nbsp;" }}
+                  </div>
+              </div>
+              {% endif %}
               {% if device_data.resources.cpus %}
               <div class="form-row">
                   <label>{% trans 'Cores' %}:</label>
