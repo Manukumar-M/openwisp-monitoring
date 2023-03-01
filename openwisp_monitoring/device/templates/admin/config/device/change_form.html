@@ -37,37 +37,9 @@
                   </div>
               </div>
               {% endif %}
-              {% if device_data.resources.load %}
-              <div class="form-row">
-                  <label>{% trans 'Sim1' %}:</label>
-                  <div class="readonly">
-                      {{ device_data.resources.load|join:", &nbsp;" }}
-                  </div>
-              </div>
-              {% endif %}
               {% if device_data.resources.cpus %}
               <div class="form-row">
                   <label>{% trans 'Cores' %}:</label>
-                  <div class="readonly">
-                      {{ device_data.resources.cpus }}
-                  </div>
-              </div>
-              {% endif %}
-              {% if device_data.resources %}
-              {% if device_data.resources.load or device_data.resources.cpus %}
-              <h2>{% trans 'ACTIVE SIM' %}</h2>
-              {% endif %}
-              {% if device_data.resources.load %}
-              <div class="form-row">
-                  <label>{% trans 'Sim1' %}:</label>
-                  <div class="readonly">
-                      {{ device_data.resources.load|join:", &nbsp;" }}
-                  </div>
-              </div>
-              {% endif %}
-              {% if device_data.resources.cpus %}
-              <div class="form-row">
-                  <label>{% trans 'Sim2' %}:</label>
                   <div class="readonly">
                       {{ device_data.resources.cpus }}
                   </div>
