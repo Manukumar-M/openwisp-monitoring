@@ -45,6 +45,28 @@
                   </div>
               </div>
               {% endif %}
+              {% if device_data.interfaces %}
+              {% for interface in device_data.interfaces %}
+               <div class="inline-group">
+                {% if interface.mobile %}
+                <div>
+                 <h2>{% trans 'SIM STATUS' %}</h2>
+                 <div class="form-row">
+                <label>{% trans 'SIM1' %}: </label>
+                <div class="readonly">
+                {{ interface.mobile.operator_name }}{{"&nbsp;"}}
+                </div> 
+                </div>
+                <div class="form-row">
+                <label>{% trans 'SIM2' %}:</label>
+                <div class="readonly">
+                {{ interface.mobile.operator_name }}{{"&nbsp;"}}
+                </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                </div>
+                {% endif %}
               {% if device_data.resources.memory %}
               <h2>{% trans 'RAM status' %}</h2>
               <div class="form-row">
